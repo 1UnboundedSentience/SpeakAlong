@@ -15,23 +15,14 @@
       <%= f.password_field :password, placeholder: "Password"%><br>
 
       <%= f.submit "Log in" %>
+      <% if @error %>
+      <p><%= @error %></p>
+      <% end %>
       </fieldset>
     <% end %>
-<!-- <form class="pure-form" action="/sessions/" method="post">
-    <fieldset>
-        <legend>Login to Practice Speaking</legend>
-
-        <input type="email" placeholder="Email" name="email">
-        <input type="password" placeholder="Password" name="password">
-        <br><br>
-        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
-    </fieldset>
-</form> -->
 
 <%= form_for :user do |f| %>
 
-
-  <!-- form class="pure-form pure-form-aligned" action="/users" method="post" -->
       <fieldset>
           <legend>New? Sign up!</legend>
 

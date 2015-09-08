@@ -1,5 +1,5 @@
 <h1>This is your profile page <%= @user.username %></h1>
 
-<%= form_for :user, url: user_path(@user), method: :patch do |f| %>
+<%= form_for :user, url: logout_path, method: :delete do |f| %>
   <%= f.submit value: 'Log Out' %>
 <% end %>
