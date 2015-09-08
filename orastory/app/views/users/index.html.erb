@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>OraStory</title>
+</head>
+<body>
+  <h1>OraStory</h1>
+  <p>A crowdsourced public speaking review service</p>
+<form class="pure-form" action="/sessions/" method="post">
+    <fieldset>
+        <legend>Login to Practice Speaking</legend>
+
+        <input type="email" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="password">
+        <br><br>
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+</form>
+
+<%= form_for :user do |f| %>
+
+
+  <!-- form class="pure-form pure-form-aligned" action="/users" method="post" -->
+      <fieldset>
+          <legend>New? Sign up!</legend>
+
+
+
+          <div class="pure-control-group">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, placeholder: "First Name" %>
+          </div>
+
+          <div class="pure-control-group">
+              <%= f.label :last_name  %>
+              <%= f.text_field :last_name, placeholder: "Last Name" %>
+          </div>
+
+          <div class="pure-control-group">
+              <%= f.label :email %>
+              <%= f.text_field :email, placeholder: "E-mail" %>
+          </div>
+
+          <div class="pure-control-group">
+              <%= f.label :username %>
+              <%= f.text_field :username, placeholder: "Username" %>
+          </div>
+
+          <div class="pure-control-group">
+              <%= f.label :password %>
+              <%= f.text_field :password, placeholder: "Password" %>
+          </div>
+
+          <div class="pure-controls">
+              <label for="cb" class="pure-checkbox">
+                  <input id="cb" type="checkbox"> I've read the terms and conditions
+              </label>
+              <br>
+              <%= f.submit %><br>
+
+          </div>
+      </fieldset>
+
+
+<% end %>
+</body>
+</html>
