@@ -4,8 +4,20 @@
 </head>
 <body>
   <h1>OraStory</h1>
-  <p>A crowdsourced public speaking review service</p>
-<form class="pure-form" action="/sessions/" method="post">
+    <p>A crowdsourced public speaking review service</p>
+    <%= form_for(:session, url: login_path, class: "pure-form") do |f| %>
+      <fieldset>
+      <legend>Login to Practice Speaking</legend>
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: "E-mail"%><br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "Password"%><br>
+
+      <%= f.submit "Log in" %>
+      </fieldset>
+    <% end %>
+<!-- <form class="pure-form" action="/sessions/" method="post">
     <fieldset>
         <legend>Login to Practice Speaking</legend>
 
@@ -14,7 +26,7 @@
         <br><br>
         <button type="submit" class="pure-button pure-button-primary">Sign in</button>
     </fieldset>
-</form>
+</form> -->
 
 <%= form_for :user do |f| %>
 
