@@ -6,21 +6,16 @@
 
 <h2>Videos</h2>
 <h2>Add a Video:</h2>
-<%= form_for :video, url: user_videos_path do |f| %>
-  <p>
+<%= form_for :video, url: user_videos_path, method: :post do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </p>
 
   <%= hidden_field_tag(:user_id,value=@user.id)%>
-  <p>
     <%= f.label :video_link %><br>
     <%= f.text_field :video_link %>
-  </p>
-  <p>
     <%= f.submit %>
-  </p>
 <% end %>
+
 <% @videos.each do |video| %>
   <p>
     <strong>Video Title:</strong>
@@ -35,8 +30,15 @@
   <p>
     <strong>Actual Video:</strong>
 
-    <%= VideoInfo.new(video.video_link).embed_code.html_safe if video.video_link %>
+    <%= VideoInfo.new(video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(video.video_link) %>
   </p>
+
+  <td><%= link_to 'Edit', edit_user_video_path(video, video.user_id) %></td>
+      <td><%= link_to 'Destroy', user_video_path(video, video.user_id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+      </td>
+
 <% end %>
 
 

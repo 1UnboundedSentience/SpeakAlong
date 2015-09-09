@@ -7,13 +7,15 @@ class VideosController < ApplicationController
   end
 
   def create
+    p params
     @user = User.find(params[:user_id])
-    p @user
-    @videos = Video.all
+    # p @user
+    # @video = Video.new(user_video_params)
+    # @videos = Video.all
     @video = @user.videos.new(
-      title: params[:title],
+      title: params[:video][:title],
       user_id: params[:user_id],
-      video_link: params[:video_link]
+      video_link: params[:video][:video_link]
     )
     p @video
     if @video.save
@@ -29,7 +31,18 @@ class VideosController < ApplicationController
   end
 
   def edit
-
+    @video = Video.find(params[:id]) #the video id
+    @user = User.find(session[:user_id])
   end
 
+  def update
+    @video = Video.find(params[:id]) #the video id
+    @user = User.find(session[:user_id])
+    @video.update(
+      title: params[:video][:title],
+      user_id: params[:user_id],
+      video_link: params[:video][:video_link]
+    )
+    redirect_to user_video_path(@user, @video)
+  end
 end

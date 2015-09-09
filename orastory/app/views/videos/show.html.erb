@@ -1,13 +1,15 @@
 <p>
-  <strong>Title:</strong>
-  <%= @video.title %>
+  <strong>Title:</strong><br>
+  <%= @video.title %><br>
+</p>
+  <strong>Video Link:</strong>
+  <%= @video.video_link %><br>
+  <%= VideoInfo.new(@video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
 </p>
 
 <p>
-  <strong>Text:</strong>
-
 </p>
 
 <%= link_to 'Edit', edit_user_video_path(@user, @video) %> |
-<%= link_to 'Back', user_video_path(@user, @video) %>
-<!-- back button doesnt work -->
+<%= link_to 'Back', user_videos_path(@user) %>
+
