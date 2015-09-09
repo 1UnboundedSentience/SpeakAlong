@@ -8,7 +8,35 @@
 </p>
 
 <p>
+<h2>Add a review:</h2>
+<%= form_for([@video, @video.reviews.build]) do |f| %>
+  <p>
+    <%= f.label :body_lang %><br>
+    <%= f.text_field :body_lang %>
+  </p>
+  <%= radio_button_tag(:body_lang_rating, "Body Language Rating") %> <br>
+  <%= label_tag(:body_lang_rating, "Body Language Rating") %> <br>
+  <p>
+    <%= f.label :vocal_comments %><br>
+    <%= f.text_area :vocal_comments %>
+  </p>
+  <p>
+    <%= f.label :content_comments %><br>
+    <%= f.text_area :content_comments %>
+  </p>
+  <p>
+    <%= f.label :overall_comments %><br>
+    <%= f.text_area :overall_comments %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 </p>
+
+
 
 <%= link_to 'Edit', edit_user_video_path(@user, @video) %> |
 <%= link_to 'Back', user_videos_path(@user) %>

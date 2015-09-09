@@ -21,13 +21,9 @@
       </fieldset>
     <% end %>
 
-<%= form_for :user do |f| %>
-
+<%= form_for :user, url: users_path, method: :post do |f| %>
       <fieldset>
           <legend>New? Sign up!</legend>
-
-
-
           <div class="pure-control-group">
               <%= f.label :first_name %>
               <%= f.text_field :first_name, placeholder: "First Name" %>
@@ -62,8 +58,6 @@
 
           </div>
       </fieldset>
-
-
 <% end %>
 </body>
 </html>

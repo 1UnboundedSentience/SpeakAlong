@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   #post 'users/:user_id/videos(.:format)' => 'videos#create'
 
   resources :users do
-    resources :videos
+    resources :videos do
+      resources :reviews
+    end
   end
 
 

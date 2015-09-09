@@ -32,7 +32,7 @@
 
     <%= VideoInfo.new(video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(video.video_link) %>
   </p>
-
+    <td><%= link_to 'show', user_video_path(@user, video) %></td>
   <td><%= link_to 'Edit', edit_user_video_path(@user, video) %></td>
       <td><%= link_to 'Destroy', user_video_path(@user, video),
               method: :delete,
