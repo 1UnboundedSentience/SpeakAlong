@@ -45,4 +45,13 @@ class VideosController < ApplicationController
     )
     redirect_to user_video_path(@user, @video)
   end
+
+  def destroy
+    @video = Video.find(params[:id])
+    @user = User.find(session[:user_id])
+    @video.destroy
+    redirect_to user_videos_path(@user)
+  end
 end
+
+
