@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Videos Listing</title>
+</head>
+<body>
+
+<h2>Videos</h2>
+<% @videos.each do |video| %>
+  <p>
+    <strong>Video Title:</strong>
+    <%= video.title %>
+  </p>
+
+  <p>
+    <strong>Video Author:</strong>
+    <%= video.creator_id %>
+  </p>
+
+  <p>
+    <strong>Video Link:</strong>
+    <%= video.video_link %>
+  </p>
+<% end %>
+
+<h2>Add a Video:</h2>
+<%= form_for(:video) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <%= hidden_field_tag(:creator_id,value=@user.id)%>
+  <p>
+    <%= f.label :video_link %><br>
+    <%= f.text_field :video_link %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+
+</body>
+</html>

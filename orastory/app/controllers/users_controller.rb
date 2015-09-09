@@ -6,10 +6,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    # @user = User.new(user_params)
-    # @user.save
-    # auth_login(@user)
-    # redirect_to @user
+    @user = User.new(user_params)
+    @user.save
+    auth_login(@user)
+    redirect_to @user
   end
 
   def show
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def update #log out the user
 
   end
+
 
   private
 
