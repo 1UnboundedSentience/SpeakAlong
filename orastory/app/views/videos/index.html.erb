@@ -5,26 +5,8 @@
 <body>
 
 <h2>Videos</h2>
-<% @videos.each do |video| %>
-  <p>
-    <strong>Video Title:</strong>
-    <%= video.title %>
-  </p>
-
-  <p>
-    <strong>Video Author:</strong>
-    <%= video.user_id %>
-  </p>
-
-  <p>
-    <strong>Actual Video:</strong>
-
-    <%= VideoInfo.new(video.video_link).embed_code.html_safe %>
-  </p>
-<% end %>
-
 <h2>Add a Video:</h2>
-<%= form_for(:video) do |f| %>
+<%= form_for :video, url: user_videos_path do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -39,6 +21,24 @@
     <%= f.submit %>
   </p>
 <% end %>
+<% @videos.each do |video| %>
+  <p>
+    <strong>Video Title:</strong>
+    <%= video.title %>
+  </p>
+
+  <p>
+    <strong>Video Author:</strong>
+    <%= video.user_id %>
+  </p>
+
+  <p>
+    <strong>Actual Video:</strong>
+
+    <%= VideoInfo.new(video.video_link).embed_code.html_safe if video.video_link %>
+  </p>
+<% end %>
+
 
 
 

@@ -5,8 +5,9 @@
 
 <p>
   <strong>Text:</strong>
-  <%= @video.text %>
+
 </p>
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<%= link_to 'Edit', edit_user_video_path(@user, @video) %> |
+<%= link_to 'Back', user_video_path(@user, @video) %>
+<!-- back button doesnt work -->
