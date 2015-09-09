@@ -11,8 +11,7 @@ User.create(first_name: "Topher", last_name: "Lubaway", email: "a@a.com", userna
 User.create(first_name: "Rajal", last_name: "Patel", email: "rj@a.com", username: "rj", password: "a")
 
 1.upto(4) {|n|
-  Video.create(title: "Sherif Talking", creator_id: n, video_link: 'https://www.youtube.com/watch?v=8ONf8SXbGZ4')
+  Video.create(title: "Sherif Talking", user_id: n, video_link: 'https://www.youtube.com/watch?v=8ONf8SXbGZ4')
 }
 
-Video.create(title: "Cat Video", creator_id: 1, video_link: 'www.youtube.com/watch?v=tntOCGkgt98
-')
+Video.create(title: "Cat Video", user_id: 1, video_link: 'www.youtube.com/watch?v=tntOCGkgt98')

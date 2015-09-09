@@ -13,12 +13,13 @@
 
   <p>
     <strong>Video Author:</strong>
-    <%= video.creator_id %>
+    <%= video.user_id %>
   </p>
 
   <p>
-    <strong>Video Link:</strong>
-    <%= video.video_link %>
+    <strong>Actual Video:</strong>
+
+    <%= VideoInfo.new(video.video_link).embed_code.html_safe %>
   </p>
 <% end %>
 
@@ -29,7 +30,7 @@
     <%= f.text_field :title %>
   </p>
 
-  <%= hidden_field_tag(:creator_id,value=@user.id)%>
+  <%= hidden_field_tag(:user_id,value=@user.id)%>
   <p>
     <%= f.label :video_link %><br>
     <%= f.text_field :video_link %>

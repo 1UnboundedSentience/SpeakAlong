@@ -31,4 +31,6 @@ ActiveRecord::Schema.define(version: 20150908235723) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "videos", ["user_id"], name: "index_videos_on_user_id"
+
 end
