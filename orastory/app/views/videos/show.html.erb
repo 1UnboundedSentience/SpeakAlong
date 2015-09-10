@@ -9,10 +9,10 @@
 
 <p>
 <h2>Add a review:</h2>
-<%= form_for([@video, @video.reviews.build]) do |f| %>
+<%= form_for([@video, @video.reviews.build], url: user_video_reviews_path) do |f| %>
   <p>
-    <%= f.label :body_lang %><br>
-    <%= f.text_field :body_lang %>
+    <%= f.label :body_lang_comments %><br>
+    <%= f.text_field :body_lang_comments %>
   </p>
   <%= radio_button_tag(:body_lang_rating, "Body Language Rating") %> <br>
   <%= label_tag(:body_lang_rating, "Body Language Rating") %> <br>

@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20150909232856) do
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "video_id_id"
-    t.integer  "user_id_id"
+    t.integer  "video_id"
+    t.integer  "user_id"
     t.integer  "body_lang_rating"
     t.text     "body_lang_comments"
     t.integer  "vocal_rating"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20150909232856) do
     t.datetime "updated_at",         null: false
   end
 
-  add_index "reviews", ["user_id_id"], name: "index_reviews_on_user_id_id"
-  add_index "reviews", ["video_id_id"], name: "index_reviews_on_video_id_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+  add_index "reviews", ["video_id"], name: "index_reviews_on_video_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
