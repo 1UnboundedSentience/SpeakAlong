@@ -31,6 +31,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id]) #the video id
     @user = User.find(session[:user_id])
     @reviews = Review.where(video_id: @video.id)
+    @review = Review.new()
   end
 
   def edit
