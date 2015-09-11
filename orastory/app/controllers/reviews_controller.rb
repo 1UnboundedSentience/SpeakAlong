@@ -19,6 +19,6 @@ class ReviewsController < ApplicationController
 
   private
     def review_params
-      params.require(:review).permit(:body_lang_rating, :body_lang_comments, :vocal_rating, :vocal_comments, :content_rating, :content_comments, :overall_rating, :overall_comments)
+      params.require(:review).permit(:user_id, :video_id, :body_lang_rating, :body_lang_comments, :vocal_rating, :vocal_comments, :content_rating, :content_comments, :overall_rating, :overall_comments)
     end
 end
