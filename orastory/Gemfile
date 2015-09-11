@@ -38,6 +38,8 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'sqlite3'
+  gem 'showdown-rails'
+  gem 'react-rails', github: 'reactjs/react-rails'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
