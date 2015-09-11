@@ -7,6 +7,8 @@
   <%= VideoInfo.new(@video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
 </p>
 
+<%= link_to 'Edit Video', edit_user_video_path(@user, @video) %> |
+<%= link_to 'Back', user_videos_path(@user) %>
 <p>
 <h2>Add a review:</h2>
 <%= form_for(@review, url: user_video_reviews_path(@user, @video), method: :post) do |f| %>
@@ -23,14 +25,20 @@
     <%= f.label :vocal_comments %><br>
     <%= f.text_area :vocal_comments %>
   </p>
+  <%= f.label :vocal_rating %> <br>
+  <%= f.text_field :vocal_rating %> <br>
   <p>
     <%= f.label :content_comments %><br>
     <%= f.text_area :content_comments %>
   </p>
+  <%= f.label :content_rating %> <br>
+  <%= f.text_field :content_rating %> <br>
   <p>
     <%= f.label :overall_comments %><br>
     <%= f.text_area :overall_comments %>
   </p>
+  <%= f.label :overall_rating %> <br>
+  <%= f.text_field :overall_rating %> <br>
 
   <p>
     <%= f.submit %>
@@ -41,17 +49,31 @@
 
 <h2>Reviews</h2>
 <% @video.reviews.each do |review| %>
+  Here is your video review:
   <p>
-    <strong>Reviewer:</strong>
+    <strong>Body Language Comments:</strong>
     <%= review.body_lang_comments %>
   </p>
-
+    <strong>Body Language rating:</strong>
+    <%= review.body_lang_rating %>
   <p>
-    <strong>review:</strong>
+    <strong>Vocal Comments:</strong>
+    <%= review.vocal_comments %>
+  </p>
+      <strong>Vocal rating:</strong>
+    <%= review.vocal_rating %>
+  <p>
+    <strong>Content Comments:</strong>
+    <%= review.content_comments %>
+  </p>
+    <strong>Content rating:</strong>
+    <%= review.content_rating %>
+  <p>
+    <strong>Overall Comments:</strong>
     <%= review.overall_comments %>
   </p>
+    <strong>Overall rating:</strong>
+    <%= review.overall_rating %>
 <% end %>
 
-<%= link_to 'Edit', edit_user_video_path(@user, @video) %> |
-<%= link_to 'Back', user_videos_path(@user) %>
 
