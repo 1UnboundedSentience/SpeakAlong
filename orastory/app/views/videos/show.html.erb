@@ -11,13 +11,12 @@
 <h2>Add a review:</h2>
 <%= form_for(@review, url: user_video_reviews_path(@user, @video), method: :post) do |f| %>
 <!-- , url: '/users/#{@user.id}/videos/#{@video.id}/reviews' -->
-sfdgd
   <p>
     <%= f.label :body_lang_comments %><br>
     <%= f.text_field :body_lang_comments %>
   </p>
-  <%= radio_button_tag(:body_lang_rating, "Body Language Rating") %> <br>
-  <%= label_tag(:body_lang_rating, "Body Language Rating") %> <br>
+  <%= f.label :body_lang_rating %> <br>
+  <%= f.text_field :body_lang_rating %> <br>
   <p>
     <%= f.label :vocal_comments %><br>
     <%= f.text_area :vocal_comments %>
