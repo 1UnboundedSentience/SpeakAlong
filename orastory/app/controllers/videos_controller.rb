@@ -56,6 +56,13 @@ class VideosController < ApplicationController
     @video.destroy
     redirect_to user_videos_path(@user)
   end
+
+  private
+
+  def video_params
+    params.require(:video).permit(:title,
+:user, :video_link)
+  end
 end
 
 
