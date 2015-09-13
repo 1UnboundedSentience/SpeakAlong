@@ -196,7 +196,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.2.3)
   rails_12factor (= 0.0.2)
-  react-rails!
+  react-rails (~> 1.0)!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   showdown-rails

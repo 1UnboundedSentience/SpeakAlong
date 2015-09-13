@@ -5,6 +5,10 @@
 <body>
 <div class = 'container'>
 <h2>Videos</h2>
+<%= react_component('FilterableVideoTable') %>
+<div data-react-class="Videos" data-react-props= <%=  {:videos => @videos.to_json} %> >
+  <h1>Hello, John!</h1>
+</div>
 <h2>Add a Video:</h2>
 <%= form_for :video, url: user_videos_path, method: :post do |f| %>
     <%= f.label :title %><br>

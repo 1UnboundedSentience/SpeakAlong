@@ -15,5 +15,7 @@
 //= require turbolinks
 //= require showdown
 //= require react
+//= require react_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+//= require components
