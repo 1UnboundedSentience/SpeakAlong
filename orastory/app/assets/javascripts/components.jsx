@@ -88,4 +88,4 @@ var VIDEOS = [
           })
         }
       });
-    React.render(<FilterableVideoTable />, document.body);
+    React.render(<FilterableVideoTable />, document.footer);

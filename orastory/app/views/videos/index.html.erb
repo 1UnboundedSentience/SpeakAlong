@@ -5,8 +5,6 @@
 <body>
 <div class = 'container'>
 <h2>Videos</h2>
-<%= react_component('FilterableVideoTable', {prerender: true}) %>
-<div data-react-class="Videos" data-react-props= <%=  {:videos => @videos.to_json} %> >
   <h1>Hello, John!</h1>
 </div>
 <h2>Add a Video:</h2>
@@ -19,6 +17,7 @@
     <%= f.text_field :video_link %>
     <%= f.submit %>
 <% end %>
+
 
 <% @videos.each do |video| %>
   <p>
@@ -49,4 +48,9 @@
 
 </div>
 </body>
+<footer>
+  <%= react_component('FilterableVideoTable', {prerender: false}) %>
+<div data-react-class="Videos" data-react-props= <%=  {:videos => @videos.to_json} %> >
+</footer>
+
 </html>
