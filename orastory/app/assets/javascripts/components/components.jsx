@@ -26,7 +26,7 @@ var VIDEOS = [
 
       var VideoRow = React.createClass({
         render: function() {
-            ytLink = 'https://www.youtube.com/embed/' + this.props.video.videoID
+            ytLink = 'https://www.youtube.com/embed/' + this.props.video.videoID;
             return (
                 <tr>
                     <td>{this.props.video.title}</td>

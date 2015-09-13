@@ -87,4 +87,5 @@ var VIDEOS = [
           })
         }
       });
-    React.render(<FilterableVideoTable />, document.body);
+    React.render(<FilterableVideoTable />, document.head);
+//appending to body will override important code
