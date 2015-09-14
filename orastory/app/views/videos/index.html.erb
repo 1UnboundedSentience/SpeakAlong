@@ -49,7 +49,7 @@
 </div>
 </body>
 <footer>
-  <%= react_component('FilterableVideoTable', {prerender: false}) %>
+  <%= react_component('FilterableVideoTable', {server_vids: @videos.to_json} ,{prerender: true}) %>
 <div data-react-class="Videos" data-react-props= <%=  {:videos => @videos.to_json} %> >
 </footer>
 

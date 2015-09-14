@@ -1,11 +1,14 @@
 //= require_tree ./components
 console.log('videos file')
+console.log(this.props);
 var VIDEOS = [
-        {title: 'Sherif Talking',
-        videoID: '8ONf8SXbGZ4'},
-        {title: 'Cat Video',
-        videoID: 'tntOCGkgt98'}
+        {title: 'Best Ted Talks',
+        videoID: '4vl6wCiUZYc'},
+        {title: 'Addiction every you about addiction is wrong',
+        videoID: 'PY9DcIMGxMs'}
       ]
+
+
       var SearchBar = React.createClass({
         wumpus: function() {
           this.props.onUserInput(
@@ -68,9 +71,10 @@ var VIDEOS = [
                 }
         },
         render: function() {
-            console.log('videos file')
-            console.log(this.state)
-            //console.log(this.props)
+            console.log('videos file render')
+            // console.log(this.state)
+            // console.log(this.props)
+            console.log(this.props)
             return (
                 <div>
                     <SearchBar
