@@ -14,3 +14,11 @@
  */
 @import "bootstrap-sprockets";
     @import "bootstrap";
+body {
+  background-image: url("/images/Blue.jpg");
+  text-size: 16px;
+}
+
+a {
+  color: red;
+}

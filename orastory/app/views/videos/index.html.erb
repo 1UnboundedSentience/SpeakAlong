@@ -10,7 +10,7 @@
 <h2>Add a Video:</h2>
 <%= form_for :video, url: user_videos_path, method: :post do |f| %>
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %>  <br>
 
   <%= hidden_field_tag(:user_id,value=@user.id)%>
     <%= f.label :video_link %><br>
@@ -35,13 +35,14 @@
 
     <%= VideoInfo.new(video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(video.video_link) %>
   </p>
-    <td><%= link_to 'show', user_video_path(@user, video) %></td>
-  <td><%= link_to 'Edit', edit_user_video_path(@user, video) %></td>
+  <h3>
+    <td><%= link_to 'Practice Speaking!', user_video_path(@user, video) %></td><br>
+  <td><%= link_to 'Edit', edit_user_video_path(@user, video) %></td><br>
       <td><%= link_to 'Destroy', user_video_path(@user, video),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
       </td>
-
+  </h3>
 <% end %>
 
 

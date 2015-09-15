@@ -21,7 +21,6 @@
 //= require components
 
 $(document).ready(function() {
-  $('button#camera-vid').on('click', function() {
-  $('#camera-feed').append(JavaScript)
-  })
+  $('iframe').css("width","640px")
+  $('iframe').css("height","480px")
 })
