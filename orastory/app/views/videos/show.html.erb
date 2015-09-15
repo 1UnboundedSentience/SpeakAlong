@@ -23,7 +23,7 @@ navigator.getUserMedia = navigator.getUserMedia ||
                          navigator.webkitGetUserMedia ||
                          navigator.mozGetUserMedia;
 if (navigator.getUserMedia) {
-   navigator.getUserMedia({ mandatory: { "OfferToReceiveAudio": true, "OfferToReceiveVideo": true }, audio:true,
+   navigator.getUserMedia({ mandatory: { "OfferToReceiveAudio": false, "OfferToReceiveVideo": true }, audio: false,
 video: true },
       function(stream) {
          var video = document.querySelector('video');
@@ -49,7 +49,7 @@ video: true },
 <!-- , url: '/users/#{@user.id}/videos/#{@video.id}/reviews' -->
   <p>
     <%= f.label :body_lang_comments %><br>
-    <%= f.text_field :body_lang_comments %>
+    <%= f.text_area :body_lang_comments %>
   </p>
   <%= f.hidden_field :user_id, :value => @user.id %>
   <%= f.hidden_field :video_id, :value => @video.id %>
