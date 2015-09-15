@@ -32,8 +32,8 @@
 
   <p>
     <strong>Actual Video:</strong>
-
-    <%= VideoInfo.new(video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(video.video_link) %>
+    <% thumbnail = "http://img.youtube.com/vi/" + video.video_link.gsub('https://www.youtube.com/watch?v=','') + "/0.jpg"%>
+    <img src=<%= thumbnail %> alt="">
   </p>
 
   <h3>

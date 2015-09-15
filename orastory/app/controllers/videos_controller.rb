@@ -3,6 +3,7 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
     # VideoInfo.provider_api_keys = { youtube: 'YOUR_YOUTUBE_API_KEY', vimeo: 'YOUR_VIMEO_API_KEY' }
+
     @user = User.find(session[:user_id])
   end
 
