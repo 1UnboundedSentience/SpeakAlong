@@ -4,8 +4,43 @@
 </p>
   <strong>Video Link:</strong>
   <%= @video.video_link %><br>
-  <%= VideoInfo.new(@video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
-</p>
+<div id='speaking-practice'>
+  <table width="100%">
+  <tr>
+  <td align="left" valign="top" width="50%">
+  <video id="video" autoplay></video>
+  </td>
+  <td align="left" valign="top" width="50%">
+    <%= VideoInfo.new(@video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
+  </td>
+  </tr>
+  </table>
+</div>
+
+
+  <script>console.log('videoplay.js running')
+navigator.getUserMedia = navigator.getUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia;
+if (navigator.getUserMedia) {
+   navigator.getUserMedia({ mandatory: { "OfferToReceiveAudio": true, "OfferToReceiveVideo": true }, audio:true,
+video: true },
+      function(stream) {
+         var video = document.querySelector('video');
+         video.src = window.URL.createObjectURL(stream);
+         video.onloadedmetadata = function(e) {
+           video.play();
+         };
+      },
+      function(err) {
+         console.log("The following error occured: " + err.name);
+      }
+   );
+} else {
+   console.log("getUserMedia not supported");
+}
+</script>
+
 <%= link_to 'Edit Video', edit_user_video_path(@user, @video) %> |
 <%= link_to 'Back', user_videos_path(@user) %>
 <p>

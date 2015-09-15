@@ -33,7 +33,7 @@ var VIDEOS = [
             return (
                 <tr>
                     <td>Video Title: {this.props.video.title}</td>
-                    <td><iframe width="560" height="315" src={ytLink} frameBorder="0" allowFullScreen></iframe></td>
+                    <td><iframe width="640" height="315" src={ytLink} frameBorder="0" allowFullScreen></iframe></td>
                 </tr>
                 );
             }

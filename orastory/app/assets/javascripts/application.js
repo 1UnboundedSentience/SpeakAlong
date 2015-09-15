@@ -19,3 +19,9 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require components
+
+$(document).ready(function() {
+  $('button#camera-vid').on('click', function() {
+  $('#camera-feed').append(JavaScript)
+  })
+})
