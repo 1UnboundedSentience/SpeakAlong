@@ -8,6 +8,7 @@ Becoming a great public speaker is as simple as 1-2-3: <br><br><br>
 Here's the link to see your
 <%= link_to 'videos' , user_videos_path(@user) %>
 </h3>
+
 <%= form_for :user, url: logout_path, method: :delete do |f| %>
   <%= f.submit value: 'Log Out' %>
 <% end %>

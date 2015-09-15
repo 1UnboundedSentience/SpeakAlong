@@ -1,9 +1,9 @@
 class CreateVideos < ActiveRecord::Migration
   def change
     create_table :videos do |t|
-      t.string
-      t.references , index: true
-      t.text
+      t.string :title
+      t.references :user, index: true
+      t.string :video_link
 
       t.timestamps null: false
     end

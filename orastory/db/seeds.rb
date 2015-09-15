@@ -10,6 +10,8 @@ User.create(first_name: "Jason", last_name: "Xu", username: "jasonxu", email: "a
 User.create(first_name: "Topher", last_name: "Lubaway", email: "b@a.com", username: "tl", password: "a")
 User.create(first_name: "Rajal", last_name: "Patel", email: "rj@a.com", username: "rj", password: "a")
 
-  Video.create(title: "Sherif Talking", user_id: 1, video_link: 'https://www.youtube.com/watch?v=8ONf8SXbGZ4')
+Video.create(title: "Public Speaking Champion 2014", user_id: 1, video_link: 'https://www.youtube.com/watch?v=bbz2boNSeL0')
 
-Video.create(title: "Cat Video", user_id: 2, video_link: 'www.youtube.com/watch?v=tntOCGkgt98')
+Video.create(title: "Julian Treasure how to speak", user_id: 2, video_link: 'https://www.youtube.com/watch?v=eIho2S0ZahI')
+
+Video.create(title: "Presiyan Vasilev", user_id: 2, video_link: 'https://www.youtube.com/watch?v=9k92IGhnLig')
