@@ -40,8 +40,8 @@
           console.log(this.props)
           var filterText = this.props.filterText;
           this.props.videos.forEach(function(video) {
-              debugger
               if (video.title.toLowerCase().indexOf(this.props.filterText.toLowerCase()) === -1) { return;}
+              else if (this.props.filterText === "") {return ;}
               rows.push(<VideoRow video={video} key={video.name} />);
           }.bind(this));
           return (
@@ -88,5 +88,5 @@
           })
         }
       });
-    React.render(<FilterableVideoTable />, document.footer);
+    React.render(<FilterableVideoTable />, document.header);
 
