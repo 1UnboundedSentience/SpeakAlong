@@ -25,6 +25,7 @@
             console.log(ytLink)
             return (
                 <tr>
+                    <td></td>
                     <td>Video Title: {this.props.video.title}</td>
                     <td><iframe width="640" height="315" src={ytLink} frameBorder="0" allowFullScreen></iframe></td>
                 </tr>
