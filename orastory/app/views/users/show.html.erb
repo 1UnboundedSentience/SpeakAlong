@@ -1,14 +1,22 @@
-<h1 align="center">Welcome to OratoryStory</h1>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Orastory</title>
+</head>
+<body>
+  <h1 align="center">Welcome to OratoryStory</h1>
 
-<h3>
-Becoming a great public speaker is as simple as 1-2-3: <br><br><br>
-1. Upload your favorite public speaking videos from YouTube <br>
-2. Practice alongside your favorite speeches with a video feed! <br>
-3. Get reviews on your speech and give reviews to other users! <br><br>
-Here's the link to see your
-<%= link_to 'videos' , user_videos_path(@user) %>
-</h3>
+  <h3>
+  Becoming a great public speaker is as simple as 1-2-3: <br><br><br>
+  1. Upload your favorite public speaking videos from YouTube <br>
+  2. Practice alongside your favorite speeches with a video feed! <br>
+  3. Get reviews on your speech and give reviews to other users! <br><br>
+  Click <%= link_to 'here' , user_videos_path(@user) %> to see your videos.
+  </h3>
 
-<%= form_for :user, url: logout_path, method: :delete do |f| %>
-  <%= f.submit value: 'Log Out' %>
-<% end %>
+  <%= form_for :user, url: logout_path, method: :delete do |f| %>
+    <%= f.submit value: 'Log Out' %>
+  <% end %>
+
+</body>
+</html>

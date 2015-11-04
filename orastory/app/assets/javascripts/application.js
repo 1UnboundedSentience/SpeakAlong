@@ -20,6 +20,7 @@
 //= require bootstrap-sprockets
 //= require components
 
+
 $(document).ready(function() {
   $('iframe').css("width","640px")
   $('iframe').css("height","480px")
