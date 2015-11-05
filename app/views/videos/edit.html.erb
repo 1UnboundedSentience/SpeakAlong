@@ -1,0 +1,9 @@
+<%= form_for :video, url: user_video_path(@user, @video), method: :patch do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+
+    <%= f.label :video_link %><br>
+    <%= f.text_field :video_link %>
+    <%= f.submit %>
+<% end %>
+<%= link_to 'Back', user_videos_path(@user, @video) %>

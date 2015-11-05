@@ -1,0 +1,120 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header-wrapper">
+  <div id="header" class="container">
+    <div id="logo">
+      <h1><span class="icon icon-cog"></span><a href="#">OratoryStory</a></h1>
+      <div id="menu">
+        <ul>
+          <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+          <li><a href="#" accesskey="2" title="">Practice Speaking</a></li>
+          <li><a href="#" accesskey="3" title="">About Jason</a></li>
+          <li><a href="#" accesskey="4" title="">More Resources</a></li>
+          <li><a href="#" accesskey="5" title="">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="page-wrapper">
+  <div id="page" class="container">
+    <div class="title">
+      <h2>Practice speaking alongside your favorite speakers on YouTube.</h2>
+    </div>
+    <p>Welcome to <strong>OratoryStory</strong>. It's An app to practice public speaking on your webcam side-by-side with your favorite YouTube speeches.   You can create crowdsourced reviews for other users and manage your video collection to keep improving on your oratory skills.</p>
+  </div>
+  <%= link_to 'Continue to Videos' , user_videos_path(@user), {:style=>"align:center", :class => "button"}%>
+
+</div>
+
+<div id="copyright" class="container">
+    <ul class="contact">
+      <li><a href="twitter.com/selachusrex
+" class="icon icon-twitter"><span>Twitter</span></a></li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+<html>
+<head>
+  <title>Videos Listing</title>
+</head>
+<body>
+<div class = 'container'>
+<%= form_for :user, url: logout_path, method: :delete do |f| %>
+  <%= f.submit value: 'Log Out' %>
+<% end %>
+<h1>Videos</h1>
+  <h2>Hello, <%= @user.first_name %> <%= @user.last_name %>!</h2>
+</div>
+<h2>Add a Video:</h2>
+<%= form_for :video, url: user_videos_path, method: :post do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>  <br>
+
+  <%= hidden_field_tag(:user_id,value=@user.id)%>
+    <%= f.label :video_link %><br>
+    <%= f.text_field :video_link %>
+    <%= f.submit %>
+<% end %>
+<br><br>
+
+<div id="react-search">
+  <h3>Search for the embed code of your favorite videos:</h3>
+<%= react_component('FilterableVideoTable', @videos.to_json) %> <br><br>
+</div>
+<% @videos.each do |video| %>
+  <p>
+    <div id="vid-text"><strong>Title:</strong></div>
+    <div id="vid-text"><%= video.title %></div>
+  </p>
+
+  <p>
+    <div id="vid-text"><strong>Author: </strong></div>
+    <div id="vid-text"><%= User.find(video.user_id).first_name%> <%= User.find(video.user_id).last_name%></div>
+  </p>
+
+  <p>
+  <h4>
+    <td><%= link_to 'Practice Speaking with this video!', user_video_path(@user, video) %></td><br>
+  <td><%= link_to 'Edit', edit_user_video_path(@user, video) %></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td><%= link_to 'Delete Video', user_video_path(@user, video),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+      </td>
+  </h4>
+    <% thumbnail = "http://img.youtube.com/vi/" + video.video_link.gsub('https://www.youtube.com/watch?v=','') + "/0.jpg"%>
+    <img src=<%= thumbnail %> alt="">
+  </p>
+
+
+<% end %>
+
+
+
+</div>
+</body>
+<footer>
+
+</footer>
+
+</html>

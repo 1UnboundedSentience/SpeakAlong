@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Oratory Story</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header-wrapper" height="200px">
+  <div id="header" class="container">
+    <div class="row">
+    <div id="logo">
+      <h1><span class="icon icon-bullhorn"></span><a href="#">OratoryStory</a></h1>
+    </div>
+    <div id="menu">
+        <ul>
+          <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+          <li><a href="#" accesskey="2" title="">Practice Speaking</a></li>
+          <li><a href="#" accesskey="3" title="">About Jason</a></li>
+          <li><a href="#" accesskey="4" title="">More Resources</a></li>
+          <li><a href="#" accesskey="5" title="">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="page-wrapper">
+  <div id="page" class="container">
+
+    <p>Welcome to <strong>OratoryStory</strong>. It's An app to practice public speaking on your webcam side-by-side with your favorite YouTube speeches.   You can create crowdsourced reviews for other users and manage your video collection to keep improving on your oratory skills.</p>
+  </div>
+</div>
+<div id="wrapper" style="background:#F3F3F3">
+<h1>OraStory</h1>
+    <p>A crowdsourced public speaking review service</p>
+    <%= form_for(:session, url: login_path, class: "pure-form") do |f| %>
+      <fieldset>
+      <legend>Login to Practice Speaking</legend>
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: "E-mail"%>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "Password"%>
+<!-- hide the password -->
+      <%= f.submit "Log in" %>
+      <% if @error %>
+      <p><%= @error %></p>
+      <% end %>
+      </fieldset>
+    <% end %>
+</div>
+<div id="wrapper" style="background:#F3F3F3">
+<%= form_for :user, url: users_path, method: :post do |f| %>
+      <fieldset>
+          <legend>New? Sign up!</legend>
+          <div class="pure-control-group">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, placeholder: "First Name" %>
+          </div>
+
+          <div class="pure-control-group">
+              <%= f.label :last_name  %>
+              <%= f.text_field :last_name, placeholder: "Last Name" %>
+          </div>
+
+          <div class="pure-control-group">
+              <%= f.label :email %>
+              <%= f.text_field :email, placeholder: "E-mail" %>
+          </div>
+
+          <div class="pure-control-group">
+              <%= f.label :username %>
+              <%= f.text_field :username, placeholder: "Username" %>
+          </div>
+
+          <div class="pure-control-group">
+              <%= f.label :password %>
+              <%= f.password_field :password, placeholder: "Password" %>
+          </div>
+
+          <div class="pure-controls">
+              <label for="cb" class="pure-checkbox">
+                  <input id="cb" type="checkbox"> I've read the terms and conditions
+              </label>
+
+              <%= f.submit %>
+
+          </div>
+      </fieldset>
+<% end %>
+</div>
+<div id="copyright" class="container">
+  <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+    <ul class="contact">
+      <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+      <li><a href="#" class="icon icon-facebook"><span></span></a></li>
+      <li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+      <li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+      <li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+    </ul>
+</div>
+</body>
+</html>
+
