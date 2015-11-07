@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Oratory Story</title>
+<title>SpeakAlong</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
@@ -20,11 +20,11 @@
   <div id="header" class="container">
     <div class="row">
     <div id="logo">
-      <h1><span class="icon icon-bullhorn"></span><a href="#">OratoryStory</a></h1>
+      <h1><span class="icon icon-bullhorn"></span><a href="#">SpeakAlong</a></h1>
     </div>
     <div id="menu">
         <ul>
-          <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+          <li class="current_page_item"><a href="/users/23/videos" accesskey="1" title="">Homepage</a></li>
           <li><a href="#" accesskey="2" title="">Practice Speaking</a></li>
           <li><a href="#" accesskey="3" title="">About Jason</a></li>
           <li><a href="#" accesskey="4" title="">More Resources</a></li>
@@ -37,19 +37,18 @@
 <div id="page-wrapper">
   <div id="page" class="container">
 
-    <p>Welcome to <strong>OratoryStory</strong>. It's An app to practice public speaking on your webcam side-by-side with your favorite YouTube speeches.   You can create crowdsourced reviews for other users and manage your video collection to keep improving on your oratory skills.</p>
+    <p>Welcome to <strong>SpeakAlong</strong>. It's An app to practice public speaking on your webcam side-by-side with your favorite YouTube speeches.   You can create crowdsourced reviews for other users and manage your video collection to keep improving on your oratory skills.</p>
   </div>
 </div>
 <div id="wrapper" style="background:#F3F3F3">
 <h1>OraStory</h1>
     <p>A crowdsourced public speaking review service</p>
+
     <%= form_for(:session, url: login_path, class: "pure-form") do |f| %>
       <fieldset>
       <legend>Login to Practice Speaking</legend>
-      <%= f.label :email %>
       <%= f.email_field :email, placeholder: "E-mail"%>
 
-      <%= f.label :password %>
       <%= f.password_field :password, placeholder: "Password"%>
 <!-- hide the password -->
       <%= f.submit "Log in" %>
@@ -64,27 +63,22 @@
       <fieldset>
           <legend>New? Sign up!</legend>
           <div class="pure-control-group">
-              <%= f.label :first_name %>
               <%= f.text_field :first_name, placeholder: "First Name" %>
           </div>
 
           <div class="pure-control-group">
-              <%= f.label :last_name  %>
               <%= f.text_field :last_name, placeholder: "Last Name" %>
           </div>
 
           <div class="pure-control-group">
-              <%= f.label :email %>
               <%= f.text_field :email, placeholder: "E-mail" %>
           </div>
 
           <div class="pure-control-group">
-              <%= f.label :username %>
               <%= f.text_field :username, placeholder: "Username" %>
           </div>
 
           <div class="pure-control-group">
-              <%= f.label :password %>
               <%= f.password_field :password, placeholder: "Password" %>
           </div>
 

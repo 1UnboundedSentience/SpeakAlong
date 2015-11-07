@@ -19,17 +19,16 @@
 <div id="header-wrapper">
   <div id="header" class="container">
     <div id="logo">
-      <h1><span class="icon icon-cog"></span><a href="#">OratoryStory</a></h1>
+      <h1><span class="icon icon-cog"></span><a href="#">SpeakAlong</a></h1>
       <div id="menu">
         <ul>
-          <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+          <li class="current_page_item"><a href="/users/23/videos" accesskey="1" title="">Homepage</a></li>
           <li><a href="#" accesskey="2" title="">Practice Speaking</a></li>
           <li><a href="#" accesskey="3" title="">About Jason</a></li>
           <li><a href="#" accesskey="4" title="">More Resources</a></li>
           <li><a href="#" accesskey="5" title="">Contact</a></li>
-          <%= form_for :user, url: logout_path, method: :delete do |f| %>
-            <%= f.submit value: 'Log Out' %>
-          <% end %>
+          <li>
+        </li>
         </ul>
       </div>
     </div>
@@ -37,6 +36,9 @@
 </div>
 
 <div id="wrapper" style="background:#F3F3F3">
+<%= form_for :user, url: logout_path, method: :delete do |f| %>
+            <%= f.submit value: 'Log Out' %>
+          <% end %></li>
 <p>
   <strong>Title:</strong><br>
   <%= @video.title %><br>

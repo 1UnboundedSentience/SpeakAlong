@@ -19,17 +19,17 @@
 <div id="header-wrapper">
   <div id="header" class="container">
     <div id="logo">
-      <h1><span class="icon icon-cog"></span><a href="#">OratoryStory</a></h1>
+      <h1><span class="icon icon-cog"></span><a href="#">SpeakAlong</a></h1>
       <div id="menu">
         <ul>
-          <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+          <li class="current_page_item"><a href="/users/23/videos" accesskey="1" title="">Homepage</a></li>
           <li><a href="#" accesskey="2" title="">Practice Speaking</a></li>
           <li><a href="#" accesskey="3" title="">About Jason</a></li>
           <li><a href="#" accesskey="4" title="">More Resources</a></li>
           <li><a href="#" accesskey="5" title="">Contact</a></li>
-          <%= form_for :user, url: logout_path, method: :delete do |f| %>
-            <%= f.submit value: 'Log Out' %>
-          <% end %>
+
+
+
         </ul>
       </div>
     </div>
@@ -38,19 +38,18 @@
 
 <div id="wrapper" style="background:#F3F3F3">
 <div class = "container" style="background:#F3F3F3">
-
 <%= form_for :user, url: logout_path, method: :delete do |f| %>
-  <%= f.submit value: 'Log Out' %>
-<% end %>
+            <%= f.submit value: 'Log Out' %>
+          <% end %></li>
 
   <h1 align="center">Your Videos</h2>
 </div>
 <h2>Add a Video:</h2>
 <%= form_for :video, url: user_videos_path, method: :post do |f| %>
-    <%= f.text_field :title, :value => "Title"%>  <br>
+    <%= f.text_field :title, :placeholder => "Title"%>  <br>
 
   <%= hidden_field_tag(:user_id,value=@user.id)%>
-    <%= f.text_field :video_link, :value => "Video Link" %>
+    <%= f.text_field :video_link, :placeholder => "Video Link" %>
     <%= f.submit %>
 <% end %>
 <br><br>
@@ -61,13 +60,11 @@
 </div>
 <% @videos.each do |video| %>
   <p>
-    <div id="vid-text"><strong>Title:</strong></div>
-    <div id="vid-text"><%= video.title %></div>
+    <div id="vid-text"><strong>Title:</strong> <%= video.title %></div>
   </p>
 
   <p>
-    <div id="vid-text"><strong>Author: </strong></div>
-    <div id="vid-text"><%= User.find(video.user_id).first_name%> <%= User.find(video.user_id).last_name%></div>
+    <div id="vid-text"><strong>Author:</strong> <%= User.find(video.user_id).first_name%> <%= User.find(video.user_id).last_name%></div>
   </p>
 
   <p>

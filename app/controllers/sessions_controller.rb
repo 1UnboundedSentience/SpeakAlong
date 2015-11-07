@@ -19,6 +19,8 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
 
+
+
   private
 
   def article_params

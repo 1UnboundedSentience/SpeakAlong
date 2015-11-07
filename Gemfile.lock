@@ -204,6 +204,7 @@ DEPENDENCIES
   spring
   sqlite3 (~> 1.3.10)
   turbolinks
+  tzinfo (~> 1.2.2)
   uglifier (>= 1.3.0)
   video_info
   web-console (~> 2.0)

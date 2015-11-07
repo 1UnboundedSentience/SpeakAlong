@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
 gem 'video_info'
+gem 'tzinfo', '~> 1.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
@@ -33,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #gem 'bootstrap-sass'
-  gem 'autoprefixer-rails'
+gem 'autoprefixer-rails'
 gem 'showdown-rails'
 gem 'react-rails', '~> 1.0', github: 'reactjs/react-rails'
 
