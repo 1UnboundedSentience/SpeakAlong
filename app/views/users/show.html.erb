@@ -22,9 +22,6 @@
     <div class="title">
       <h2>Practice speaking alongside your favorite speakers on YouTube.</h2>
     </div>
-    <%= form_for :user, url: logout_path, method: :delete do |f| %>
-            <%= f.submit value: 'Log Out' ,  style: 'background:#1ABC9C; color: white; border:0; display: block'%>
-    <% end %>
     <p>Welcome to <strong>SpeakAlong</strong>. It's An app to practice public speaking on your webcam side-by-side with your favorite YouTube speeches.   You can create crowdsourced reviews for other users and manage your video collection to keep improving on your oratory skills.</p>
   </div>
   <%= link_to 'Continue to Videos' , user_videos_path(@user), {:style=>"align:center", :class => "button"}%>

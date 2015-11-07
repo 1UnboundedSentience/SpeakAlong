@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,19 +9,11 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
-
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
 </head>
 <body>
-
-
 <div id="wrapper" style="background:#F3F3F3">
 <div class = "container" style="background:#F3F3F3">
-<%= form_for :user, url: logout_path, method: :delete do |f| %>
-            <%= f.submit value: 'Log Out' %>
-          <% end %></li>
-
   <h1 align="center">Your Videos</h2>
 </div>
 <h2>Add a Video:</h2>
@@ -41,35 +31,36 @@
 <%= react_component('FilterableVideoTable', @videos.to_json) %> <br><br>
 </div>
 <% @videos.each do |video| %>
-  <p>
-    <div id="vid-text"><strong>Title:</strong> <%= video.title %></div>
-  </p>
-
-  <p>
-    <div id="vid-text"><strong>Author:</strong> <%= User.find(video.user_id).first_name%> <%= User.find(video.user_id).last_name%></div>
-  </p>
-
-  <p>
-  <h4>
-    <td><%= link_to 'Practice Speaking with this video!', user_video_path(@user, video) %></td><br>
-  <td><%= link_to 'Edit', edit_user_video_path(@user, video) %></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <td><%= link_to 'Delete Video', user_video_path(@user, video),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+  <div class="table-responsive">
+    <table id="vid-table" class="table" style="width:100%">
+    <tr>
+      <td>
+        <div id="vid-text"><strong>Title:</strong></div>
+        <div id="vid-text"><%= video.title %></div>
       </td>
-  </h4>
-    <% thumbnail = "http://img.youtube.com/vi/" + video.video_link.gsub('https://www.youtube.com/watch?v=','') + "/0.jpg"%>
-    <img src=<%= thumbnail %> alt="">
-  </p>
+      <td>
+        <div id="vid-text"><strong>Author: </strong></div>
+        <div id="vid-text"><%= User.find(video.user_id).first_name%> <%= User.find(video.user_id).last_name%></div>
+      </td>
+      <td><% thumbnail = "http://img.youtube.com/vi/" + video.video_link.gsub('https://www.youtube.com/watch?v=','') + "/1.jpg"%>
+      <img src=<%= thumbnail %> alt=""></td>
+    </tr>
 
-
+    <h4>
+      <td><%= link_to 'Practice Speaking with this video!', user_video_path(@user, video) %></td><br>
+    <td><%= link_to 'Edit', edit_user_video_path(@user, video) %></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td><%= link_to 'Delete Video', user_video_path(@user, video),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+        </td>
+    </h4>
+    </p>
+    </table>
+  </div>
 <% end %>
 </div>
-
-
 </div>
 </body>
 <footer>
-
 </footer>
 </html>

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-
     # p auth_logged_in?
     # p auth_logout
     # p auth_current_user

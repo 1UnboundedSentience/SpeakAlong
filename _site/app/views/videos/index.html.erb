@@ -27,16 +27,16 @@
 <%= react_component('FilterableVideoTable', @videos.to_json) %> <br><br>
 </div>
 <% @videos.each do |video| %>
-  <p>
+<div class="table-responsive">
+  <table id="vid-table" class="table" style="width:100%">
+  <tr>
     <div id="vid-text"><strong>Title:</strong></div>
     <div id="vid-text"><%= video.title %></div>
-  </p>
-
-  <p>
+  </tr>
+  <tr>
     <div id="vid-text"><strong>Author: </strong></div>
     <div id="vid-text"><%= User.find(video.user_id).first_name%> <%= User.find(video.user_id).last_name%></div>
-  </p>
-
+  </tr>
   <p>
   <h4>
     <td><%= link_to 'Practice Speaking with this video!', user_video_path(@user, video) %></td><br>
@@ -46,11 +46,11 @@
               data: { confirm: 'Are you sure?' } %>
       </td>
   </h4>
-    <% thumbnail = "http://img.youtube.com/vi/" + video.video_link.gsub('https://www.youtube.com/watch?v=','') + "/0.jpg"%>
+    <% thumbnail = "http://img.youtube.com/vi/" + video.video_link.gsub('https://www.youtube.com/watch?v=','') + "/1.jpg"%>
     <img src=<%= thumbnail %> alt="">
   </p>
-
-
+  </table>
+</div>
 <% end %>
 
 
