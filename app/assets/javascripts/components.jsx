@@ -1,6 +1,6 @@
 //= require_tree ./components
       var SearchBar = React.createClass({
-        wumpus: function() {
+        getFilteredText: function() {
           this.props.onUserInput(
             this.refs.filterTextInput.getDOMNode().value
           )
@@ -12,7 +12,7 @@
                     type="text"
                     placeholder="Search..."
                     ref = "filterTextInput" //refering to filterTextInput
-                    onChange = {this.wumpus} />
+                    onChange = {this.getFilteredText} />
                 </form>
             );
         }
@@ -22,12 +22,13 @@
         render: function() {
             var ytLink = this.props.video.video_link
             var ytLink = ytLink.replace("watch?v=", "v/");
-            console.log(ytLink)
+            var ytCodeID= 'http://img.youtube.com/vi/' + ytLink.split('/v/')[1] + '/1.jpg';
             return (
                 <tr>
                     <td></td>
-                    <td>Video Title: {this.props.video.title}</td>
-                    <td><iframe width="640" height="315" src={ytLink} frameBorder="0" allowFullScreen></iframe></td>
+                    <td>Video Title: {this.props.video.title}</td> <br></br>
+                    <td><img src={ytCodeID}></img></td>
+
                 </tr>
                 );
             }
@@ -54,9 +55,9 @@
       });
 
       var FilterableVideoTable = React.createClass({
-        handleUserInput: function(wumpus) {
+        handleUserInput: function(getFilteredText) {
           this.setState({
-            filterText: wumpus
+            filterText: getFilteredText
           })
         },
         getInitialState: function() {

@@ -101,31 +101,34 @@ video: true },
 
 <h2>Reviews</h2>
 <% @video.reviews.each do |review| %>
-  Here is your video review:
-  <p>
+  <table id="review-table">
+  <td>
     <strong>Body Language Comments:</strong>
-    <%= review.body_lang_comments %>
-  </p>
+    <%= review.body_lang_comments %> <br>
+  </td>
     <strong>Body Language rating:</strong>
-    <%= review.body_lang_rating %>
-  <p>
+    <%= review.body_lang_rating %> <br>
+  <td>
     <strong>Vocal Comments:</strong>
-    <%= review.vocal_comments %>
-  </p>
+    <%= review.vocal_comments %> <br>
+  </td>
       <strong>Vocal rating:</strong>
-    <%= review.vocal_rating %>
-  <p>
+    <%= review.vocal_rating %> <br>
+  <td>
     <strong>Content Comments:</strong>
-    <%= review.content_comments %>
-  </p>
+    <%= review.content_comments %> <br>
+  </td>
     <strong>Content rating:</strong>
-    <%= review.content_rating %>
-  <p>
+    <%= review.content_rating %> <br>
+  <td>
     <strong>Overall Comments:</strong>
     <%= review.overall_comments %>
-  </p>
+  </td>
+  <td>
     <strong>Overall rating:</strong>
     <%= review.overall_rating %>
+  </td>
+  </table>
 <% end %>
 
 
