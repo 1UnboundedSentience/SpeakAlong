@@ -23,10 +23,14 @@
             var ytLink = this.props.video.video_link
             var ytLink = ytLink.replace("watch?v=", "v/");
             var ytCodeID= 'http://img.youtube.com/vi/' + ytLink.split('/v/')[1] + '/1.jpg';
+            debugger
             return (
                 <tr>
                     <td></td>
-                    <td>Video Title: {this.props.video.title}</td> <br></br>
+                    <td>Video Title: {this.props.video.title}
+                      <a href="/users/25/videos/2">Practice!</a>
+                      <a href="/users/25/videos/2/edit">Edit</a>
+                    </td> <br></br>
                     <td><img src={ytCodeID}></img></td>
 
                 </tr>
