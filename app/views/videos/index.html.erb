@@ -40,7 +40,7 @@
       </td>
       <td>
         <div id="vid-text"><strong>Author: </strong></div>
-        <div id="vid-text"><%= User.find(video.user_id).first_name%> <%= User.find(video.user_id).last_name%></div>
+        <div id="vid-text"><%= User.find(video.user_id).first_name if User.find(video.user_id).first_name %> <%= User.find(video.user_id).last_name if User.find(video.user_id).last_name%></div>
       </td>
       <td><% thumbnail = "http://img.youtube.com/vi/" + video.video_link.gsub('https://www.youtube.com/watch?v=','') + "/1.jpg"%>
       <img src=<%= thumbnail %> alt=""></td>

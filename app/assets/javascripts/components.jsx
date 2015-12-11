@@ -32,8 +32,7 @@
                 <tr>
                     <td></td>
                     <td>Video Title: {this.props.video.title}
-                      <a href="videos/" + {videoID}>Practice!</a>
-                      <a href="videos/" + {videoID} + "/edit">Edit</a>
+
                     </td> <br></br>
                     <td><img src={ytCodeID}></img></td>
 
@@ -46,7 +45,6 @@
       var VideoTable = React.createClass({
         render: function() {
           var rows = [];
-          debugger
           var filterText = this.props.filterText;
           this.props.videos.forEach(function(video) {
               if (video.title.toLowerCase().indexOf(this.props.filterText.toLowerCase()) === -1) { return;}
@@ -69,7 +67,6 @@
         },
         getInitialState: function() {
           userVids = []
-          debugger
           for (var key in this.props) {
               userVids.push(this.props[key]);
           }
