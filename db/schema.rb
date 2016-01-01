@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150909232856) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "reviews", force: :cascade do |t|
     t.integer  "video_id"
     t.integer  "user_id"
@@ -28,8 +31,8 @@ ActiveRecord::Schema.define(version: 20150909232856) do
     t.datetime "updated_at",         null: false
   end
 
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
-  add_index "reviews", ["video_id"], name: "index_reviews_on_video_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  add_index "reviews", ["video_id"], name: "index_reviews_on_video_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -49,6 +52,9 @@ ActiveRecord::Schema.define(version: 20150909232856) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "videos", ["user_id"], name: "index_videos_on_user_id"
+  add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
 
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "videos"
+  add_foreign_key "videos", "users"
 end
