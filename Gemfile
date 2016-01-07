@@ -38,7 +38,7 @@ gem 'autoprefixer-rails'
 gem 'showdown-rails'
 gem 'react-rails', '~> 1.0', github: 'reactjs/react-rails'
 
-
+gem 'ffmpeg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
