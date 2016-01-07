@@ -1,7 +1,7 @@
 # OraStoryRails
 OraStory crowdsourced public speaking review converted to Rails
 
-An app to practice public speaking on your webcam side-by-side with your favorite 
+An app to practice public speaking or second-language acquisition on your webcam side-by-side with your favorite 
 YouTube speeches.   You can create crowdsourced reviews for other users and manage 
 your video collection to keep improving on your oratory skills.
 

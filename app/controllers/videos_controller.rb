@@ -8,7 +8,6 @@ class VideosController < ApplicationController
   end
 
   def create
-    p params
     @user = User.find(params[:user_id])
     # p @user
     # @video = Video.new(user_video_params)
@@ -18,7 +17,6 @@ class VideosController < ApplicationController
       user_id: params[:user_id],
       video_link: params[:video][:video_link]
     )
-    p @video
     if @video.save
       redirect_to user_video_path(@user, @video)
     else
@@ -28,7 +26,6 @@ class VideosController < ApplicationController
 
   def show
     params[:video_id] = params[:id]
-    p params
     @video = Video.find(params[:id]) #the video id
     @user = User.find(session[:user_id])
     @reviews = Review.where(video_id: @video.id)

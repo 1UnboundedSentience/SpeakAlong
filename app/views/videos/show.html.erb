@@ -28,15 +28,15 @@
   <td align="left" valign="top" width="50%">
   <video id="video" autoplay></video>
   </td>
-  <td align="left" valign="top" width="50%">
-    <%= VideoInfo.new(@video.video_link).embed_code.html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
+  <td align="right" valign="top" width="50%">
+    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 800, height: 600, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
   </td>
   </tr>
   </table>
 </div>
 
 
-  <script>console.log('videoplay.js running')
+  <script>
 navigator.getUserMedia = navigator.getUserMedia ||
                          navigator.webkitGetUserMedia ||
                          navigator.mozGetUserMedia;
