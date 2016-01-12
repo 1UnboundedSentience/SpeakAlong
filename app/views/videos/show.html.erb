@@ -1,10 +1,10 @@
 <head>
-    <title>RecordRTC: WebRTC audio/video recording ® Muaz Khan</title>
+    <title>SpeakAlong</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="author" type="text/html" href="https://plus.google.com/+MuazKhan">
-    <meta name="author" content="Muaz Khan">
+    <meta name="author" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <link rel="stylesheet" href="https://cdn.webrtc-experiment.com/style.css">
@@ -77,30 +77,24 @@
     <script src="https://cdn.rawgit.com/webrtc/adapter/master/adapter.js"></script>
 <style id="holderjs-style" type="text/css"></style><script type="text/javascript" async="" src="//webrtcexperiment.disqus.com/embed.js"></script><script src="//a.disquscdn.com/next/embed/alfie.f51946af45e0b561c60f768335c9eb79.js" async="" charset="UTF-8"></script></head>
 
+  <div class="inner">
+                <h2 id="download-url"><a href="blob:https%3A//www.webrtc-experiment.com/95bcb453-0656-4c0d-b262-9e4fc2ae3161" download="RecordRTC.webm" target="_blank">Save RecordRTC.webm to Disk!</a><hr></h2>
+                <br>
+                <video id="video" src="blob:https%3A//www.webrtc-experiment.com/627b2ec3-e971-4796-a384-66dc05a93ef8" controls=""></video>
 
-
-<body class=" __plain_text_READY__" style="">
-    <article>
-        <header style="text-align: center;">
-            <h1>
-                <a href="https://github.com/muaz-khan/RecordRTC">RecordRTC</a>: <a href="https://www.webrtc-experiment.com/" target="_blank">WebRTC</a> audio/video recording ®
-                <a href="https://github.com/muaz-khan" target="_blank">Muaz Khan</a>
-            </h1>
-            <p>
-                <a href="https://www.webrtc-experiment.com/">HOME</a>
-                <span> © </span>
-                <a href="http://www.MuazKhan.com/" target="_blank">Muaz Khan</a> .
-                <a href="http://twitter.com/WebRTCWeb" target="_blank" title="Twitter profile for WebRTC Experiments">@WebRTCWeb</a> .
-                <a href="https://github.com/muaz-khan?tab=repositories" target="_blank" title="Github Profile">Github</a> .
-                <a href="https://github.com/muaz-khan/RecordRTC/issues?state=open" target="_blank">Latest issues</a> .
-                <a href="https://github.com/muaz-khan/RecordRTC/commits/master" target="_blank">What's New?</a>
-            </p>
-        </header>
-
-        <div class="github-stargazers"><span class="github-btn github-watchers"><a target="_blank" class="gh-btn" href="https://github.com/muaz-khan/RecordRTC/"><span class="gh-ico"></span><span class="gh-text">Star </span></a><a target="_blank" class="gh-count" href="https://github.com/muaz-khan/RecordRTC/stargazers" style="display: block;">333</a></span><span class="github-btn github-forks"><a target="_blank" class="gh-btn" href="https://github.com/muaz-khan/RecordRTC/"><span class="gh-ico"></span><span class="gh-text"> Fork </span></a><a target="_blank" class="gh-count" href="https://github.com/muaz-khan/RecordRTC/network" style="display: block;">146</a></span><span class="github-btn github-me"><a target="_blank" class="gh-btn" href="https://github.com/muaz-khan"><span class="gh-ico"></span><span class="gh-text">Follow @muaz-khan</span></a><a target="_blank" class="gh-count" href="https://github.com/muaz-khan/followers" style="display: block;">698</a></span></div>
-
-        <section class="experiment recordrtc">
-            <h2 class="header">
+  </div>
+<div id="wrapper" style="background:#F3F3F3">
+  <strong>Title:</strong><br>
+  <%= @video.title %><br>
+</p>
+  <strong>Video Link:</strong>
+  <%= @video.video_link %><br>
+<div id='speaking-practice'>
+  <table width="100%">
+  <tr>
+    <td id="top-bar" align="top" width="100%">
+             <section class="experiment recordrtc" id="recording-control-section">
+            <h2 class="header" id="recording-control">
                 <select class="recording-media"><option value="record-audio-plus-video">Audio+Video</option>
                     <option value="record-video">Video</option>
                     <option value="record-audio">Audio</option>
@@ -116,7 +110,7 @@
                     <option>Gif</option>
                 </select>
 
-                <button>Start Recording</button>
+                <button id="start-stop-button">Start Recording</button>
             </h2>
 
             <div style="text-align: center; display: none;">
@@ -126,8 +120,34 @@
 
             <br>
 
-            <video controls="" muted=""></video>
+
         </section>
+
+  </tr>
+  <tr>
+  <td id="recording-div" align="left" valign="top" width="50%">
+    <section id="video-render">
+            <video id="rendered-video" controls="" muted=""></video>
+            <video id="video" src="blob:https%3A//www.webrtc-experiment.com/627b2ec3-e971-4796-a384-66dc05a93ef8" controls=""></video>
+        </section>
+  <!-- sdfd -->
+        <article>
+        <div class="github-stargazers"><span class="github-btn github-watchers"><a target="_blank" class="gh-btn" href="https://github.com/muaz-khan/RecordRTC/"><span class="gh-ico"></span><span class="gh-text">Star </span></a><a target="_blank" class="gh-count" href="https://github.com/muaz-khan/RecordRTC/stargazers" style="display: block;">333</a></span><span class="github-btn github-forks"><a target="_blank" class="gh-btn" href="https://github.com/muaz-khan/RecordRTC/"><span class="gh-ico"></span><span class="gh-text"> Fork </span></a><a target="_blank" class="gh-count" href="https://github.com/muaz-khan/RecordRTC/network" style="display: block;">146</a></span><span class="github-btn github-me"><a target="_blank" class="gh-btn" href="https://github.com/muaz-khan"><span class="gh-ico"></span><span class="gh-text">Follow @muaz-khan</span></a><a target="_blank" class="gh-count" href="https://github.com/muaz-khan/followers" style="display: block;">698</a></span></div>
+
+
+    </article>
+    </td>
+  <td align="right" valign="top" width="50%">
+    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 800, height: 600, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
+  </td>
+  </tr>
+  </table>
+</div>
+
+<body class=" __plain_text_READY__" style="">
+
+
+
 
         <script>
             (function() {
@@ -169,13 +189,14 @@
             var recordingPlayer = recordingDIV.querySelector('video');
             var mediaContainerFormat = recordingDIV.querySelector('.media-container-format');
 
+
             window.onbeforeunload = function() {
                 recordingDIV.querySelector('button').disabled = false;
                 recordingMedia.disabled = false;
                 mediaContainerFormat.disabled = false;
             };
 
-            recordingDIV.querySelector('button').onclick = function() {
+            recordingDIV.querySelector('start-stop-button').onclick = function() {
                 var button = this;
 
                 if(button.innerHTML === 'Stop Recording') {
@@ -186,7 +207,7 @@
                         button.disableStateWaiting = false;
                     }, 2 * 1000);
 
-                    button.innerHTML = 'Star Recording';
+                    button.innerHTML = 'Start Recording';
 
                     function stopStream() {
                         if(button.stream && button.stream.stop) {
@@ -798,10 +819,6 @@
                     DetectRTC.screen.onMessageCallback(event.data);
                 });
             </script>
-
-
-    </article>
-
     <a href="https://github.com/muaz-khan/RecordRTC" class="fork-left"></a>
 
     <footer>
