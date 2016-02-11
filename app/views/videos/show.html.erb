@@ -23,13 +23,15 @@
   <strong>Video Link:</strong>
   <%= @video.video_link %><br>
 <div id='speaking-practice'>
-  <table width="100%">
-  <tr>
-  <td align="left" valign="top" width="50%">
-  <video id="video" autoplay></video>
+  <table width="100%" height="600px">
+  <tr height="600px">
+  <td align="main" valign="top" width="100%">
+    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 1000, height: 600, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
   </td>
-  <td align="right" valign="top" width="50%">
-    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 800, height: 600, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
+  </tr>
+  <tr>
+  <td align="self-feed" valign="bottom" width="40%">
+  <video id="video" autoplay></video>
   </td>
   </tr>
   </table>
