@@ -11,3 +11,8 @@ Have trouble with your camera permissions?  Follow instructions here to change y
 https://support.google.com/chrome/answer/2693767?hl=en
 
 If you are viewing this app deployed to the web, as such my example at, https://speakalong.herokuapp.com, make sure you type "https://" instead of "http://" or omitting the protocol info as the getUserMedia camera access is no longer supported in http
+
+Use Cases:
+    -Immigrants to the United States working career-oriented professional fields who urgently want English language practice for business and personal assimilation.  
+    -Public speaking training for companies
+    
