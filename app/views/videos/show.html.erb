@@ -28,7 +28,7 @@
   <td align="main" valign="right" width="50%">
     <video id="video" autoplay width="100%"></video>
     <td id="self-feed" valign="right" width="40%">
-    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 200, height: 200, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
+    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 500, height: 667, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
     </td>
   </td>
   </tr>
