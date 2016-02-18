@@ -25,14 +25,15 @@
 <div id='speaking-practice'>
   <table width="100%" height="600px">
   <tr height="600px">
-  <td align="main" valign="top" width="100%">
-    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 1000, height: 600, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
+  <td align="main" valign="right" width="50%">
+    <video id="video" autoplay width="100%"></video>
+    <td id="self-feed" valign="right" width="40%">
+    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 200, height: 200, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
+    </td>
   </td>
   </tr>
   <tr>
-  <td align="self-feed" valign="bottom" width="40%">
-  <video id="video" autoplay></video>
-  </td>
+
   </tr>
   </table>
 </div>

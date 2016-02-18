@@ -20,6 +20,10 @@ class UsersController < ApplicationController
 
   end
 
+  def terms
+
+  end
+
 
   private
 

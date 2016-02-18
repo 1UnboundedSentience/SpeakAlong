@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  #get 'login' => 'sessions#new'
+  get 'terms' => 'users#terms'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   #post 'users/:user_id/videos(.:format)' => 'videos#create'

@@ -20,7 +20,6 @@
             );
         }
       });
-//displays a row for each video
       var VideoRow = React.createClass({
         render: function() {
             //var currentRouteName = this.context.router.getCurrentPathname();
@@ -42,11 +41,9 @@
             }
         });
 
-//displays and filters the data collection based on user input
       var VideoTable = React.createClass({
         render: function() {
           var rows = [];
-          debugger
           var filterText = this.props.filterText;
           this.props.videos.forEach(function(video) {
               if (video.title.toLowerCase().indexOf(this.props.filterText.toLowerCase()) === -1) { return;}
@@ -60,7 +57,6 @@
           );
         }
       });
-//contains entire search bar & videos
       var FilterableVideoTable = React.createClass({
         handleUserInput: function(getFilteredText) {
           this.setState({
@@ -69,7 +65,6 @@
         },
         getInitialState: function() {
           userVids = []
-          debugger
           for (var key in this.props) {
               userVids.push(this.props[key]);
           }
