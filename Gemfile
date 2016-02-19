@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
-gem 'capybara'
 #looks at all security issues, tells you to update
 
-gem 'rspec-rails', '~> 2.10.0'
+
 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
@@ -57,6 +56,9 @@ group :development, :test do
   gem 'spring'
   gem 'brakeman', :require => false
   gem 'minitest'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 group :production do
