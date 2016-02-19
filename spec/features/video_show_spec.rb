@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe Video, js: true do
-  describe "back buttons" do
-    context "go back to original page" do
-       it "logs in" do
+  describe "Login" do
+    context "Logging in successfully" do
+       it "fills form and clicks login" do
         visit "/"
         within('#signup-form') do
           fill_in('First Name', :with => 'Jason')
