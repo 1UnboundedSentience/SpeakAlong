@@ -21,8 +21,8 @@
 <div id='speaking-practice'>
   <table width="100%" height="600px">
   <tr height="600px">
-  <td id="main" align="main" valign="right" width="1000px" height="1000px">
-        <video id="webrtc-video" autoplay width="640px" height="480px" style="opacity:0.65; position: absolute; pointer-events: none; top:200px; left:800px"></video>
+  <td id="main" align="main" valign="right" width="800px" height="600px">
+        <video id="webrtc-video" autoplay width="640px" height="480px" style="opacity:0.65; position: absolute; pointer-events: none; top:200px; left:0px"></video>
     <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 640, height: 480, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
   </td>
   </tr>
