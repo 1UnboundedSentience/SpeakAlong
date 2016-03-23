@@ -4,16 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>List of Videos</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
-<!-- <link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" /> -->
-
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>List of Videos</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+  <%= javascript_include_tag 'keycontrols' %>
 </head>
 <body>
 <div id="wrapper" style="background:#F3F3F3">
@@ -25,11 +21,9 @@
 <div id='speaking-practice'>
   <table width="100%" height="600px">
   <tr height="600px">
-  <td align="main" valign="right" width="50%">
-    <video id="video" autoplay width="100%"></video>
-    <td id="self-feed" valign="right" width="40%">
-    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 500, height: 667, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
-    </td>
+  <td id="main" align="main" valign="right" width="1000px" height="1000px">
+        <video id="webrtc-video" autoplay width="640px" height="480px" style="opacity:0.65; position: absolute; pointer-events: none; top:200px; left:800px"></video>
+    <%= VideoInfo.new(@video.video_link).embed_code(iframe_attributes: { width: 640, height: 480, 'data-key' => 'value' }).html_safe if /(https?:\/\/|www)[\S]+/.match(@video.video_link) %>
   </td>
   </tr>
   <tr>
@@ -44,10 +38,10 @@ navigator.getUserMedia = navigator.getUserMedia ||
                          navigator.webkitGetUserMedia ||
                          navigator.mozGetUserMedia;
 if (navigator.getUserMedia) {
-   navigator.getUserMedia({ mandatory: { "OfferToReceiveAudio": false, "OfferToReceiveVideo": true }, audio: false,
+   navigator.getUserMedia({audio: false,
 video: true },
       function(stream) {
-         var video = document.querySelector('video');
+         var video = document.getElementById('webrtc-video');
          video.src = window.URL.createObjectURL(stream);
          video.onloadedmetadata = function(e) {
            video.play();

@@ -20,13 +20,33 @@
 <script type="text/javascript">
 
 function go_get(){
- var base_url = 'http://www.youtube.com/embed?listType=search&list=' ;
- var search_field = document.getElementById('yourtextfield').vaue ;
+ //var base_url = 'http://www.youtube.com/embed?listType=search&list=' ;
+ var base_url = 'https://www.youtube.com/results?search_query=';
+ var search_field = document.getElementById('yourtextfield').value ;
  var target_url = base_url + search_field ;
  var ifr = document.getElementById('youriframe') ;
- ifr.src = target_url ;
- debugger
- return false ;
+ //ifr.src = target_url ;
+ function createCORSRequest(method, url){
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr){
+        // XHR has 'withCredentials' property only if it supports CORS
+        xhr.open(method, url, true);
+    } else if (typeof XDomainRequest != "undefined"){ // if IE use XDR
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+    } else {
+        xhr = null;
+    }
+    return xhr;
+  }
+  var request = createCORSRequest( "get", target_url );
+      if ( request ){
+          // Define a callback function
+          request.onload = function(){};
+          // Send request
+          request.send();
+      }
+  return false ;
 }
 
 </script>

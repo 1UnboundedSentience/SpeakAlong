@@ -17,13 +17,13 @@
   <h1 align="center">Your Videos</h2>
 </div>
 <h2>Add a Video:</h2>
-<%= form_for :video, url: user_videos_path, method: :post do |f| %>
-    <%= f.text_field :title, :placeholder => "Title"%>  <br>
+  <%= form_for :video, url: user_videos_path, method: :post do |f| %>
+      <%= f.text_field :title, :placeholder => "Title"%>  <br>
 
-  <%= hidden_field_tag(:user_id,value=@user.id)%>
-    <%= f.text_field :video_link, :placeholder => "Video Link" %>
-    <%= f.submit %>
-<% end %>
+    <%= hidden_field_tag(:user_id,value=@user.id)%>
+      <%= f.text_field :video_link, :placeholder => "Video Link" %>
+      <%= f.submit %>
+  <% end %>
 <br><br>
 
 <div id="react-search" style="background:#F3F3F3">

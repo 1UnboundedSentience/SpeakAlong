@@ -1,4 +1,3 @@
-console.log('videoplay.js running')
 var hdConstraints = {
   video: {
     mandatory: {
