@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 #looks at all security issues, tells you to update
-
+ruby '2.1.6'
 
 
 gem 'bootstrap-sass', '~> 3.3.5'
