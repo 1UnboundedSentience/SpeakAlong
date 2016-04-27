@@ -2,6 +2,17 @@
 //= require jquery_ujs
 
 $(document).ready(function() {
+  // slider feature
+  $(function() {
+    $( "#slider" ).slider();
+  });
+  $('#opacity-input').click(function(e) {
+    $('#opacity-input').mousemove(function(e) {
+      var mappedOpacity = parseInt($('#opacity-input').val())/100;
+      $('#webrtc-video').css("opacity", mappedOpacity);
+      $('#cur-opa').text("Opacity:" + mappedOpacity);
+    })
+  })
   var pane = $('#main'),
       webrtcFeed = $('#webrtc-video'),
       w = pane.width() - webrtcFeed.width(),

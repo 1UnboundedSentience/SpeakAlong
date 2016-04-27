@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  #require 'video_info'
   def index
     @videos = Video.all
     # VideoInfo.provider_api_keys = { youtube: 'YOUR_YOUTUBE_API_KEY', vimeo: 'YOUR_VIMEO_API_KEY' }

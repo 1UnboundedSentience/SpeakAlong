@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 #looks at all security issues, tells you to update
 ruby '2.1.6'
 
+gem 'perftools.rb'
+group :development do
+  gem 'rails-dev-boost', :git => 'git@github.com:thedarkone/rails-dev-boost.git'
+end
 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
@@ -42,9 +46,9 @@ gem 'autoprefixer-rails'
 gem 'showdown-rails'
 gem 'react-rails', '~> 1.0', github: 'reactjs/react-rails'
 
-group :development do
-  gem 'web-console', '~> 2.0'
-end
+# group :development do
+#   gem 'web-console', '~> 2.0'
+# end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
