@@ -139,7 +139,6 @@ GEM
       ast
       ruby-ll (~> 2.1)
     open_uri_redirections (0.2.1)
-    perftools.rb (2.0.4)
     pg (0.15.1)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -147,6 +146,7 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    puma (3.4.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -277,9 +277,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   minitest
-  perftools.rb
   pg (= 0.15.1)
   pry-rails
+  puma
   rails (= 4.2.3)
   rails-dev-boost!
   rails_12factor (= 0.0.2)

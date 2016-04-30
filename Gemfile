@@ -2,10 +2,8 @@ source 'https://rubygems.org'
 #looks at all security issues, tells you to update
 ruby '2.1.6'
 
-gem 'perftools.rb'
-group :development do
-  gem 'rails-dev-boost', :git => 'git@github.com:thedarkone/rails-dev-boost.git'
-end
+#puma speeds up rails server
+gem 'puma'
 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
