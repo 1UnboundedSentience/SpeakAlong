@@ -1,7 +1,4 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,55 +6,8 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
-<!-- <link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" /> -->
-
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
 </head>
 <body>
-
-<script type="text/javascript">
-
-function go_get(){
- //var base_url = 'http://www.youtube.com/embed?listType=search&list=' ;
- var base_url = 'https://www.youtube.com/results?search_query=';
- var search_field = document.getElementById('yourtextfield').value ;
- var target_url = base_url + search_field ;
- var ifr = document.getElementById('youriframe') ;
- //ifr.src = target_url ;
- function createCORSRequest(method, url){
-    var xhr = new XMLHttpRequest();
-    if ("withCredentials" in xhr){
-        // XHR has 'withCredentials' property only if it supports CORS
-        xhr.open(method, url, true);
-    } else if (typeof XDomainRequest != "undefined"){ // if IE use XDR
-        xhr = new XDomainRequest();
-        xhr.open(method, url);
-    } else {
-        xhr = null;
-    }
-    return xhr;
-  }
-  var request = createCORSRequest( "get", target_url );
-      if ( request ){
-          // Define a callback function
-          request.onload = function(){};
-          // Send request
-          request.send();
-      }
-  return false ;
-}
-
-</script>
-
-<form onsubmit="go_get(); return false;" >
- <input type="text"  id="yourtextfield"/>
- <input type="submit" value="Search Playlists" />
-</form>
-
-<iframe id="youriframe" width="640" height="360" ></iframe>
-
 <div id="page-wrapper">
   <div id="page" class="container">
 
@@ -67,7 +17,7 @@ function go_get(){
 <div id="wrapper">
 <h1>SpeakAlong</h1>
   <p>A crowdsourced public speaking review service</p>
-
+<h3>Login</h3>
   <%= form_for(:session, url: login_path, role: "form") do |f| %>
     <form role="form">
       <div class="form-group">

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 #looks at all security issues, tells you to update
-ruby '2.1.6'
+ruby '2.0.0'
 
 #puma speeds up rails server
 gem 'puma'
