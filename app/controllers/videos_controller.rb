@@ -8,9 +8,6 @@ class VideosController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    # p @user
-    # @video = Video.new(user_video_params)
-    # @videos = Video.all
     @video = @user.videos.new(
       title: params[:video][:title],
       user_id: params[:user_id],
