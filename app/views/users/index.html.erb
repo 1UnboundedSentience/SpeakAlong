@@ -1,6 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <!-- jQuery UI CDN -->
+  <%= javascript_include_tag 'keycontrols' %>
+  <%= javascript_include_tag 'webrtcLogic' %>
+  <%= javascript_include_tag 'RecordRTC' %>
+  <script src="https://cdn.webrtc-experiment.com/gumadapter.js"></script>
+  <%= javascript_include_tag 'RecordRTClogic' %>
+  <%= stylesheet_link_tag 'webrtc_css' %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>SpeakAlong</title>
 <meta name="keywords" content="" />
@@ -14,6 +21,83 @@
     <p>Welcome to <strong>SpeakAlong</strong>. It's An app to practice public speaking on your webcam side-by-side with your favorite YouTube speeches.   You can create crowdsourced reviews for other users and manage your video collection to keep improving on your oratory skills.</p>
   </div>
 </div>
+
+<section class="experiment recordrtc"></section>
+<h2 class="header" id="recording-panel">
+    <button id="start-button">Start Recording</button>
+    <button id="stop-button">Stop Recording</button>
+    <div id="rec-state">Not Recording</div>
+    <div id="rec-link"></div>
+</h2>
+<div id='speaking-practice'>
+  <table width="100%" height="600px">
+  <tr height="600px">
+  Use Arrow Keys to move your Real-Time Connection feed (←↑→↓) <br>
+
+
+Paste YouTube Video ID here then click away to change the video: <input type="text" id="url-bar"></input><br>
+
+
+
+Use Arrow Keys to move your Real-Time Connection feed (←↑→↓) <br>
+
+<div id="slider">
+  <input id="opacity-input" type="range" max="100" min="0" style="width:20%"><div id="cur-opa">Opacity: </div></input>
+</div>
+
+  <td id="main" align="main" valign="right" width="100%" height="100%">
+        <video id="webrtc-video" autoplay width="640px" height="480px" style="opacity:0.65; position: absolute; pointer-events: none; top:200px; left:0px"></video>
+  </td>
+  </tr>
+  <tr>
+  </tr>
+  </table>
+</div>
+
+</p>
+</div>
+
+
+<div id="wrapper" style="background:#F3F3F3">
+
+<div id='speaking-practice'>
+  <table width="100%" height="600px">
+  <tr height="600px">
+  <td id="main" align="main" valign="right" width="800px" height="600px">
+
+  </td>
+  </tr>
+  <tr>
+
+  </tr>
+  </table>
+</div>
+
+
+  <script>
+navigator.getUserMedia = navigator.getUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia;
+if (navigator.getUserMedia) {
+   navigator.getUserMedia({audio: false,
+video: true },
+      function(stream) {
+         var video = document.getElementById('webrtc-video');
+         video.src = window.URL.createObjectURL(stream);
+         video.onloadedmetadata = function(e) {
+           video.play();
+         };
+      },
+      function(err) {
+         console.log("The following error occured: " + err.name);
+      }
+   );
+} else {
+   console.log("getUserMedia not supported");
+}
+</script>
+
+
 <div id="wrapper">
 <h1>SpeakAlong</h1>
   <p>A crowdsourced public speaking review service</p>
